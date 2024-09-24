@@ -1,4 +1,4 @@
-const listed =[];
+const listed = [];
 let count = 0;
 const myTask = document.querySelector("#myTask");
 const addBTn = document.querySelector("#addBtn");
@@ -6,19 +6,17 @@ const listOfTasks = document.querySelector(".listOfTasks");
 const noInput = document.querySelector("#noInput");
 const countTaskDone = document.querySelector("#count");
 
-function changeCompleted(taskDone, status){
+function changeCompleted(taskDone, status) {
     let index = listed.map(t => t.task).indexOf(taskDone);
     listed[index].completed = status;
-    console.log(listed); 
+    //console.log(listed);
 }
 
-addBTn.addEventListener("click", function()
-
-{
+addBTn.addEventListener("click", function () {
     let newTask = myTask.value;
-    if(newTask.length == 0) {
+    if (newTask.length == 0) {
         noInput.innerText = "You must type in a task";
-        return; 
+        return;
     } else {
         noInput.innerText = "";
     }
@@ -26,7 +24,7 @@ addBTn.addEventListener("click", function()
     const toDo = document.createElement("div");
     toDo.classList.add("divOfToDo");
     listOfTasks.appendChild(toDo);
-    
+
     const list = document.createElement("li");
     list.innerText = newTask;
     list.classList.add("listOfToDo");
@@ -42,14 +40,14 @@ addBTn.addEventListener("click", function()
     deleteBtn.classList.add("deleteBtn");
     toDo.appendChild(deleteBtn);
 
-    checkBtn.addEventListener("click", function(){
-        if (list.getAttribute("class")=="mark"){
+    checkBtn.addEventListener("click", function () {
+        if (list.getAttribute("class") == "mark") {
             count--;
             list.setAttribute("class", "");
             let taskDone = toDo.firstChild.textContent;
             changeCompleted(taskDone, false);
-        }else{
-            count ++;
+        } else {
+            count++;
             list.setAttribute("class", "mark");
             let taskDone = toDo.firstChild.textContent;
             changeCompleted(taskDone, true);
@@ -57,23 +55,24 @@ addBTn.addEventListener("click", function()
         countTaskDone.innerText = `Total tasks done: ${count} `;
     });
 
-    deleteBtn.addEventListener("click", function(){
-        toDo.remove(); 
-    
-        let taskDone = toDo.firstChild.textContent; 
-        let index = listed.map(t => t.task).indexOf(taskDone); 
-        
-       let deleted = listed.splice(index,1);
-       
-       let isDone = deleted.some((done) => {return done.completed == true});
+    deleteBtn.addEventListener("click", function () {
+        toDo.remove();
 
-       if(isDone == true){count--; }
-       
-       countTaskDone.innerText = `Total tasks done: ${count} `;
+        let taskDone = toDo.firstChild.textContent;
+        let index = listed.map(t => t.task).indexOf(taskDone);
+
+        let deleted = listed.splice(index, 1);
+
+        let isDone = deleted.some((done) => { return done.completed == true });
+
+        if (isDone == true) {
+            count--;
+            countTaskDone.innerText = `Total tasks done: ${count} `;
+        }
 
     });
 
-    const listObject = {task: newTask, completed: false};
+    const listObject = { task: newTask, completed: false };
     listed.push(listObject);
 
     myTask.value = "";
