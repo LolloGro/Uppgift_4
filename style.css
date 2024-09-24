@@ -2,7 +2,10 @@ body{
   background-color: lightsteelblue; 
   text-align: center;
 }
-form{
+h1{
+    margin-bottom: 50px; 
+}
+form{  
     margin: auto;
     background-color: lightcoral ;
     padding: 30px;

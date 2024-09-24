@@ -12,7 +12,16 @@ function changeCompleted(taskDone, status) {
     //console.log(listed);
 }
 
-addBTn.addEventListener("click", function () {
+addBTn.addEventListener("click", taskList);  
+myTask.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        taskList();
+    }
+  });
+
+function taskList()
+{
     let newTask = myTask.value;
     if (newTask.length == 0) {
         noInput.innerText = "You must type in a task";
@@ -77,4 +86,4 @@ addBTn.addEventListener("click", function () {
 
     myTask.value = "";
 
-});
+};
