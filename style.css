@@ -1,38 +1,75 @@
-body{
-  background-color: lightsteelblue; 
-  text-align: center;
+body {
+    background-color: lightsteelblue;
+    text-align: center;
+    font-family: sans-serif;
 }
-h1{
-    margin-bottom: 50px; 
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 50px;
 }
-form{  
+
+form {
     margin: auto;
-    background-color: lightcoral ;
+    background-color: lightcoral;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: bisque;
     padding: 30px;
     width: 600px;
     border-radius: 10px;
 }
-.divOfToDo{
+.ToDoList {
+    background-color: bisque;
+    margin: auto;
+    width: 500px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.showCount{
+    background-color: bisque;
+    margin: auto;
+    width: 150px;
+    padding: 20px;
+    border-radius: 60px;
+}
+
+.divOfToDo {
     margin: auto;
     text-align: left;
     background: white;
-    border-radius: 10px;
-    width: 250px; 
+    border-radius: 5px;
+    width: 300px;
     margin-bottom: 5px;
-    display: flex; 
+    display: flex;
     justify-content: space-between;
 }
-.listOfToDo{
+
+.listOfToDo {
     flex: 1;
 }
-.checkBtn{
-    background-color: lightgreen; 
+#addBtn{
+    background-color: bisque;
+    border-radius: 10px;
 }
-.deleteBtn{
+
+.checkBtn {
+    background-color: lightgreen;
+    border-radius: 10px;
+}
+
+.deleteBtn {
     background-color: lightcoral;
+    border-radius: 10px;
 }
-.mark{
+
+.mark {
     color: grey;
-    text-decoration-line: line-through;   
-    flex: 1; 
-   }
+    text-decoration-line: line-through;
+    flex: 1;
+}
+
+.reset {
+    flex: 1;
+}
