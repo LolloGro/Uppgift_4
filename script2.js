@@ -83,6 +83,10 @@ function taskList() {
             tasksToDo--;
             countTasks.innerText=tasksToDo; 
         }
+        else{
+            tasksToDo--;
+            countTasks.innerText=tasksToDo;
+        }
 
     });
 
