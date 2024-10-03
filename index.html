@@ -9,35 +9,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link id="styling" rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <script defer src='script2.js'></script>
 </head>
-
-<body>
+<body> 
+    <a onclick="document.querySelector('#styling').href='style2.css'">Style 2</a> 
+    <a onclick="document.querySelector('#styling').href='style.css'">Style 1</a>
     <div>
-        <h1>Make space with a ToDo list</h1>
         
+        <h1>Make space with a ToDo list</h1>
     </div>
-
-    <form>
-        <p>Many tasks you need to remember?</p>
-        <p>Make a list for your ToDos and make space in your head!</p>
-        <i class="fa-solid fa-list" id="icon"></i>
-        <input type="text" placeholder="Add your task here" id="myTask" name="list">
-        <button type="button" id="addBtn"><i class="fa-solid fa-plus"></i></button>
-        <p id="noInput"></p>
-    </form>
-    <div class="ToDoList">
-        <h2>ToDo list:</h2>
-        <ul class="listOfTasks"></ul>
+    <div class="myPage">
+        <form>
+            <p>Many tasks you need to remember?</p>
+            <p>Make a list for your ToDos and make space in your head!</p>
+            <i class="fa-solid fa-list" id="icon"></i>
+            <input type="text" placeholder="Add your task here" id="myTask" name="list">
+            <button type="button" id="addBtn"><i class="fa-solid fa-plus"></i></button>
+            <p id="noInput"></p>
+        </form>
+        <div class="ToDoList">
+            <h2>ToDo list:</h2>
+            <ul class="listOfTasks"></ul>
+        </div>
+        <div class="showCount">
+            <p>Total tasks done: <span id="count"></span></p>
+        </div>
+        <div>
+            <p>Total tasks: <span id="countTasks"></span></p>
+        </div>
+        <div>
+            <button type="button" id="clearBtn">Delete all tasks</button>
+        </div>
     </div>
-    <div class="showCount">
-        <p>Total tasks done:<p id="count"></p></p>
-    </div>
-    <div>
-        <p></p>Total tasks:<p id="countTasks"></p>
-    </div>
-    <div><button type="button" id="clearBtn">Delete all</button></div>
 </body>
 
 </html>
