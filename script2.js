@@ -103,7 +103,7 @@ function taskList() {
     for (let i = 0; i<listed.length; i++){
         tasksToDo=listed.length
         countTasks.innerText = tasksToDo; 
-        console.log(tasksToDo); 
+        //console.log(tasksToDo); 
     }
 
     myTask.value = "";

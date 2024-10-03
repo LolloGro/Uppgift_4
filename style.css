@@ -73,3 +73,12 @@ form {
 .reset {
     flex: 1;
 }
+.counter{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: bisque;
+    padding: 40px;
+    border-radius: 50px;
+    width: 150px;
+}
