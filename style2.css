@@ -19,10 +19,11 @@ body {
 .divOfToDo {
     margin: auto;
     text-align: left;
-    width: 300px;
+    width: 200px;
     margin-bottom: 5px;
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between; 
+    list-style-type: none; 
 }
 .listOfToDo{
     flex: 1;
