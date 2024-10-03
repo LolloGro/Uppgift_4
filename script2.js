@@ -2,9 +2,12 @@ const listed = [];
 let count = 0;
 const myTask = document.querySelector("#myTask");
 const addBTn = document.querySelector("#addBtn");
+const clearBtn = document.querySelector("#clearBtn");
 const listOfTasks = document.querySelector(".listOfTasks");
 const noInput = document.querySelector("#noInput");
 const countTaskDone = document.querySelector("#count");
+const countTasks = document.querySelector("#countTasks");
+let tasksToDo = 0;
 
 function changeCompleted(taskDone, status) {
     let index = listed.map(t => t.task).indexOf(taskDone);
@@ -77,13 +80,29 @@ function taskList() {
         if (isDone == true) {
             count--;
             countTaskDone.innerText = count;
+            tasksToDo--;
+            countTasks.innerText=tasksToDo; 
         }
 
     });
 
+    clearBtn.addEventListener("click", function(){
+        listed.splice(0);
+        listOfTasks.innerHTML =""; 
+        countTasks.innerHTML="";
+        countTaskDone.innerHTML="";
+    }); 
+
     const listObject = { task: newTask, completed: false };
     listed.push(listObject);
+
+    for (let i = 0; i<listed.length; i++){
+        tasksToDo=listed.length
+        countTasks.innerText = tasksToDo; 
+        console.log(tasksToDo); 
+    }
 
     myTask.value = "";
 
 };
+
