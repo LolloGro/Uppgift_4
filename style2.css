@@ -22,7 +22,10 @@ body {
     width: 300px;
     margin-bottom: 5px;
     display: flex;
-    flex:1;    
+    justify-content: space-between;  
+}
+.listOfToDo{
+    flex: 1;
 }
 
 .mark {
